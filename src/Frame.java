@@ -26,16 +26,15 @@ public class Frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        nilai = new javax.swing.JTextField();
         nama = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         absen = new javax.swing.JTextField();
         mapel = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        nilai = new javax.swing.JTextField();
         proses = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tahasil = new javax.swing.JTextArea();
@@ -44,41 +43,38 @@ public class Frame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 204));
-        jPanel1.setLayout(null);
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Nilai");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(40, 180, 90, 22);
-
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Penilaian");
-        jPanel1.add(jLabel2);
+        getContentPane().add(jLabel2);
         jLabel2.setBounds(160, 10, 90, 22);
+        getContentPane().add(nama);
+        nama.setBounds(170, 60, 200, 30);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Nama");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(40, 60, 90, 22);
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(60, 60, 90, 22);
+        getContentPane().add(absen);
+        absen.setBounds(170, 110, 200, 30);
+        getContentPane().add(mapel);
+        mapel.setBounds(170, 160, 200, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Absen");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(40, 100, 90, 22);
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(60, 110, 90, 22);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Mapel");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(40, 140, 90, 22);
-        jPanel1.add(nilai);
-        nilai.setBounds(140, 180, 200, 30);
-        jPanel1.add(nama);
-        nama.setBounds(140, 60, 200, 30);
-        jPanel1.add(absen);
-        absen.setBounds(140, 100, 200, 30);
-        jPanel1.add(mapel);
-        mapel.setBounds(140, 140, 200, 30);
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(60, 160, 90, 22);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("Nilai");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(60, 210, 90, 22);
+        getContentPane().add(nilai);
+        nilai.setBounds(170, 210, 200, 30);
 
         proses.setText("Proses");
         proses.addActionListener(new java.awt.event.ActionListener() {
@@ -86,15 +82,15 @@ public class Frame extends javax.swing.JFrame {
                 prosesActionPerformed(evt);
             }
         });
-        jPanel1.add(proses);
-        proses.setBounds(170, 220, 90, 40);
+        getContentPane().add(proses);
+        proses.setBounds(260, 250, 90, 40);
 
         tahasil.setColumns(20);
         tahasil.setRows(5);
         jScrollPane1.setViewportView(tahasil);
 
-        jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(71, 267, 269, 145);
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(90, 310, 269, 145);
 
         reset.setText("Reset");
         reset.addActionListener(new java.awt.event.ActionListener() {
@@ -102,43 +98,39 @@ public class Frame extends javax.swing.JFrame {
                 resetActionPerformed(evt);
             }
         });
-        jPanel1.add(reset);
-        reset.setBounds(186, 423, 61, 36);
+        getContentPane().add(reset);
+        reset.setBounds(110, 250, 80, 40);
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 400, 470);
-
-        setBounds(0, 0, 416, 511);
+        setBounds(0, 0, 446, 511);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void prosesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prosesActionPerformed
-     String nm = nama.getText();
-     int abs = Integer.parseInt(absen.getText());
-     String mpl = mapel.getText();
-     int nilain = Integer.parseInt(nilai.getText());
-     
-     
-     if(nilain <= 74)
-     {
-         tahasil.setText("Nama :"+ nm +"\n"+"Absen :"+ abs+"\n"+"Mapel :"+ mpl+"\n"+"Nilai :"+nilain+"\n"+"Predikat : Tidak Lulus");
-     }
-     else if(nilain >= 75 && nilain <= 85 )
-     {
-          tahasil.setText("Nama :"+ nm +"\n"+"Absen :"+ abs+"\n"+"Mapel :"+ mpl+"\n"+"Nilai :"+nilain+"\n"+"Predikat : Lulus");
-     }
-     else
-     {
-          tahasil.setText("Nama :"+ nm +"\n"+"Absen :"+ abs+"\n"+"Mapel :"+ mpl+"\n"+"Nilai :"+nilain+"\n"+"Predikat : Sempurna");
-     }
-    }//GEN-LAST:event_prosesActionPerformed
-
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
-      nama.setText("");
-      absen.setText("");
-      mapel.setText("");
-      nilai.setText("");
-      tahasil.setText("");
+        nama.setText("");
+        absen.setText("");
+        mapel.setText("");
+        nilai.setText("");
+        tahasil.setText("");
     }//GEN-LAST:event_resetActionPerformed
+
+    private void prosesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prosesActionPerformed
+        String nm = nama.getText();
+        int abs = Integer.parseInt(absen.getText());
+        String mpl = mapel.getText();
+        int nilain = Integer.parseInt(nilai.getText());
+
+        if(nilain <= 74)
+        {
+            tahasil.setText("Nama :"+ nm +"\n"+"Absen :"+ abs+"\n"+"Mapel :"+ mpl+"\n"+"Nilai :"+nilain+"\n"+"Predikat : Tidak Lulus");
+        }
+        else if(nilain >= 75 && nilain <= 85 )
+        {
+            tahasil.setText("Nama :"+ nm +"\n"+"Absen :"+ abs+"\n"+"Mapel :"+ mpl+"\n"+"Nilai :"+nilain+"\n"+"Predikat : Lulus");
+        }
+        else
+        {
+            tahasil.setText("Nama :"+ nm +"\n"+"Absen :"+ abs+"\n"+"Mapel :"+ mpl+"\n"+"Nilai :"+nilain+"\n"+"Predikat : Sempurna");
+        }
+    }//GEN-LAST:event_prosesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,7 +174,6 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField mapel;
     private javax.swing.JTextField nama;
